@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CongressModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="2500" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Image" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="SallePrice" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="CongressEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="ShoppingCarts" EntityType="CongressModel.ShoppingCart" />
+    <EntitySet Name="UserPeasses" EntityType="CongressModel.UserPeass" />
+    <EntitySet Name="Users" EntityType="CongressModel.User" />
+  </EntityContainer>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="IdBook" Type="Int32" />
+    <Property Name="NameBook" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="PriceBook" Type="Double" />
+    <Property Name="ImageBook" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="SallePrice" Type="Double" />
+  </EntityType>
+  <EntityType Name="UserPeass">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Permision" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="FirstNameEnglish" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="LastNameEnglish" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="FirstNameHebrew" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="LastNameHebrew" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Street" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NumberHome" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NumberPhone1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="NumberPhone2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="selectedTitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="selectedCountry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Bio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Students" Type="Boolean" />
+    <Property Name="WithoutStudemt" Type="Boolean" />
+    <Property Name="EAJS" Type="Boolean" />
+    <Property Name="AJS" Type="Boolean" />
+    <Property Name="Hebrew" Type="Boolean" />
+    <Property Name="English" Type="Boolean" />
+    <Property Name="Both" Type="Boolean" />
+  </EntityType>
+</Schema>

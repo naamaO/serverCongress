@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CongressModelStoreContainer" CdmEntityContainer="CongressEntities3">
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="CongressModel.Book">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="SallePrice" ColumnName="SallePrice" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShoppingCarts">
+      <EntityTypeMapping TypeName="CongressModel.ShoppingCart">
+        <MappingFragment StoreEntitySet="ShoppingCart">
+          <ScalarProperty Name="SallePrice" ColumnName="SallePrice" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ImageBook" ColumnName="ImageBook" />
+          <ScalarProperty Name="PriceBook" ColumnName="PriceBook" />
+          <ScalarProperty Name="NameBook" ColumnName="NameBook" />
+          <ScalarProperty Name="IdBook" ColumnName="IdBook" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserPeasses">
+      <EntityTypeMapping TypeName="CongressModel.UserPeass">
+        <MappingFragment StoreEntitySet="UserPeass">
+          <ScalarProperty Name="Permision" ColumnName="Permision" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="CongressModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Both" ColumnName="Both" />
+          <ScalarProperty Name="English" ColumnName="English" />
+          <ScalarProperty Name="Hebrew" ColumnName="Hebrew" />
+          <ScalarProperty Name="AJS" ColumnName="AJS" />
+          <ScalarProperty Name="EAJS" ColumnName="EAJS" />
+          <ScalarProperty Name="WithoutStudemt" ColumnName="WithoutStudemt" />
+          <ScalarProperty Name="Students" ColumnName="Students" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+          <ScalarProperty Name="selectedCountry" ColumnName="selectedCountry" />
+          <ScalarProperty Name="selectedTitle" ColumnName="selectedTitle" />
+          <ScalarProperty Name="NumberPhone2" ColumnName="NumberPhone2" />
+          <ScalarProperty Name="NumberPhone1" ColumnName="NumberPhone1" />
+          <ScalarProperty Name="NumberHome" ColumnName="NumberHome" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="LastNameHebrew" ColumnName="LastNameHebrew" />
+          <ScalarProperty Name="FirstNameHebrew" ColumnName="FirstNameHebrew" />
+          <ScalarProperty Name="LastNameEnglish" ColumnName="LastNameEnglish" />
+          <ScalarProperty Name="FirstNameEnglish" ColumnName="FirstNameEnglish" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CongressModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Books">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="1000" />
+          <Property Name="Details" Type="nchar" MaxLength="2500" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Image" Type="nchar" MaxLength="60" />
+          <Property Name="SallePrice" Type="float" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nchar" MaxLength="200" />
+          <Property Name="IdBook" Type="int" />
+          <Property Name="NameBook" Type="nchar" MaxLength="1000" />
+          <Property Name="PriceBook" Type="float" />
+          <Property Name="ImageBook" Type="nchar" MaxLength="300" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="SallePrice" Type="float" />
+        </EntityType>
+        <EntityType Name="UserPeass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nchar" MaxLength="20" />
+          <Property Name="Email" Type="nchar" MaxLength="30" />
+          <Property Name="Permision" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="FirstNameEnglish" Type="nchar" MaxLength="20" />
+          <Property Name="LastNameEnglish" Type="nchar" MaxLength="20" />
+          <Property Name="FirstNameHebrew" Type="nchar" MaxLength="10" />
+          <Property Name="LastNameHebrew" Type="nchar" MaxLength="10" />
+          <Property Name="City" Type="nchar" MaxLength="10" />
+          <Property Name="Street" Type="nchar" MaxLength="10" />
+          <Property Name="NumberHome" Type="nchar" MaxLength="10" />
+          <Property Name="NumberPhone1" Type="nchar" MaxLength="10" />
+          <Property Name="NumberPhone2" Type="nchar" MaxLength="10" />
+          <Property Name="selectedTitle" Type="nchar" MaxLength="10" />
+          <Property Name="selectedCountry" Type="nchar" MaxLength="10" />
+          <Property Name="PostCode" Type="nchar" MaxLength="10" />
+          <Property Name="Email" Type="nchar" MaxLength="30" />
+          <Property Name="Bio" Type="nchar" MaxLength="10" />
+          <Property Name="Students" Type="bit" />
+          <Property Name="WithoutStudemt" Type="bit" />
+          <Property Name="EAJS" Type="bit" />
+          <Property Name="AJS" Type="bit" />
+          <Property Name="Hebrew" Type="bit" />
+          <Property Name="English" Type="bit" />
+          <Property Name="Both" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="CongressModelStoreContainer">
+          <EntitySet Name="Books" EntityType="Self.Books" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPeass" EntityType="Self.UserPeass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CongressModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="2500" FixedLength="true" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Image" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+          <Property Name="SallePrice" Type="Double" />
+        </EntityType>
+        <EntityContainer Name="CongressEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Books" EntityType="Self.Book" />
+          <EntitySet Name="ShoppingCarts" EntityType="CongressModel.ShoppingCart" />
+          <EntitySet Name="UserPeasses" EntityType="CongressModel.UserPeass" />
+          <EntitySet Name="Users" EntityType="CongressModel.User" />
+        </EntityContainer>
+        <EntityType Name="ShoppingCart">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="IdBook" Type="Int32" />
+          <Property Name="NameBook" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="PriceBook" Type="Double" />
+          <Property Name="ImageBook" Type="String" MaxLength="300" FixedLength="true" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="SallePrice" Type="Double" />
+        </EntityType>
+        <EntityType Name="UserPeass">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Permision" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="FirstNameEnglish" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="LastNameEnglish" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="FirstNameHebrew" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="LastNameHebrew" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NumberHome" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NumberPhone1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NumberPhone2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="selectedTitle" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="selectedCountry" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PostCode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Bio" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Students" Type="Boolean" />
+          <Property Name="WithoutStudemt" Type="Boolean" />
+          <Property Name="EAJS" Type="Boolean" />
+          <Property Name="AJS" Type="Boolean" />
+          <Property Name="Hebrew" Type="Boolean" />
+          <Property Name="English" Type="Boolean" />
+          <Property Name="Both" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CongressModelStoreContainer" CdmEntityContainer="CongressEntities3">
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="CongressModel.Book">
+              <MappingFragment StoreEntitySet="Books">
+                <ScalarProperty Name="SallePrice" ColumnName="SallePrice" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShoppingCarts">
+            <EntityTypeMapping TypeName="CongressModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="SallePrice" ColumnName="SallePrice" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ImageBook" ColumnName="ImageBook" />
+                <ScalarProperty Name="PriceBook" ColumnName="PriceBook" />
+                <ScalarProperty Name="NameBook" ColumnName="NameBook" />
+                <ScalarProperty Name="IdBook" ColumnName="IdBook" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPeasses">
+            <EntityTypeMapping TypeName="CongressModel.UserPeass">
+              <MappingFragment StoreEntitySet="UserPeass">
+                <ScalarProperty Name="Permision" ColumnName="Permision" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="CongressModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Both" ColumnName="Both" />
+                <ScalarProperty Name="English" ColumnName="English" />
+                <ScalarProperty Name="Hebrew" ColumnName="Hebrew" />
+                <ScalarProperty Name="AJS" ColumnName="AJS" />
+                <ScalarProperty Name="EAJS" ColumnName="EAJS" />
+                <ScalarProperty Name="WithoutStudemt" ColumnName="WithoutStudemt" />
+                <ScalarProperty Name="Students" ColumnName="Students" />
+                <ScalarProperty Name="Bio" ColumnName="Bio" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PostCode" ColumnName="PostCode" />
+                <ScalarProperty Name="selectedCountry" ColumnName="selectedCountry" />
+                <ScalarProperty Name="selectedTitle" ColumnName="selectedTitle" />
+                <ScalarProperty Name="NumberPhone2" ColumnName="NumberPhone2" />
+                <ScalarProperty Name="NumberPhone1" ColumnName="NumberPhone1" />
+                <ScalarProperty Name="NumberHome" ColumnName="NumberHome" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="LastNameHebrew" ColumnName="LastNameHebrew" />
+                <ScalarProperty Name="FirstNameHebrew" ColumnName="FirstNameHebrew" />
+                <ScalarProperty Name="LastNameEnglish" ColumnName="LastNameEnglish" />
+                <ScalarProperty Name="FirstNameEnglish" ColumnName="FirstNameEnglish" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
